@@ -4,7 +4,7 @@ package com.lee.thread;
 public class Counter {
 	public int count;
 	public static int count2;
-	public synchronized void add(int value, String str) {
+	public synchronized void add(String str) {
 		
 		System.out.println(str + ":" + (this.count += 1));
 	}

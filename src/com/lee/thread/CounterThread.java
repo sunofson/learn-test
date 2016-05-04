@@ -17,7 +17,7 @@ public class CounterThread extends Thread {
 	public void run() {
 
 		/*
-		 * for(int i = 0; i < 10; i++) { counter.add(i, this.getName()); }
+		 * for(int i = 0; i < 10; i++) { counter.add(this.getName()); }
 		 */
 		for (int i = 0; i < 10; i++) {
 			Counter.add2(this.getName());
