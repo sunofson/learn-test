@@ -23,7 +23,7 @@ public class JSONObjectTest1 {
 		
 		/**
 		 * 2. Map集合转换成json代码
-		
+		 
 		Map map = new HashMap();
 
 		map.put("name", "json");
@@ -86,6 +86,38 @@ public class JSONObjectTest1 {
 		
 		System.out.println(jsonObj);
 		 */
+		
+		/**
+		 * JSONArray 转成List
+		 */
+		
+		JSONObject obj1 = new JSONObject();
+		JSONObject obj2 = new JSONObject();
+		JSONArray array = new JSONArray();
+		
+		array.add("331082198701198565");
+		array.add("331082198701198566");
+		array.add("331082198701198567");
+		array.add("331082198701198568");
+		array.add("331082198701198569");
+		
+		obj1.put("phone", "123");
+		obj1.put("sfzh", array);
+		
+		System.out.println(obj1);
+		
+		/*********************************/
+		
+		String str2 = obj1.toString();
+		
+		JSONObject o = JSONObject.fromObject(str2);
+		String sfzh = o.getString("sfzh");
+		JSONArray arr2 = JSONArray.fromObject(sfzh);
+		List<String> list = JSONArray.toList(arr2);
+		
+		for(String s1 : list) {
+			System.out.println(s1);
+		}
 		
 	}
 	
